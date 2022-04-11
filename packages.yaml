@@ -1,0 +1,13 @@
+- name: Ansible Exercise
+  hosts: local
+  connection: local
+  become: true
+  
+  tasks:
+  - name: install unzip and net tools
+    package: 
+      name: 
+        - unzip
+        - net-tools
+      state: present    
+      
