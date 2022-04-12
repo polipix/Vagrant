@@ -1,9 +1,11 @@
 - name: Introduction to Playbooks
-  hosts: local
-  connection: local
+  hosts: all
+  become: true
 
-  tasks:
-  - name: create testansible.txt
-    file:
-      path: testansible.txt
-      state: touch
+  roles:
+    - user
+    - packages
+    - geerlingguy.docker
+    - christiangda.awscli
+    - christiangda.awscli_configure
+    - diodonfrost.terraform
