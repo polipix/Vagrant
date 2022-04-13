@@ -1,7 +1,10 @@
 - name: Introduction to Playbooks
   hosts: all
   become: true
-
+  vars:
+    docker_users:
+      - panda
+      - vagrant
   roles:
     - user
     - package
